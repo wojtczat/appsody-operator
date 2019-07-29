@@ -9,6 +9,7 @@ spec:
     type: ClusterIP
     port: 9080
   expose: true
-  storage:
-    size: 2Gi
-    mountPath: "/etc/websphere"
+  autoscaling:
+    minReplicas: 2 
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 50
